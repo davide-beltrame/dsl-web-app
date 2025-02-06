@@ -1,0 +1,17 @@
+$(document).ready(function() {
+    $(".header_iconbar").click(function(event){
+
+    $(".header_menu").toggleClass('is-open');
+    event.preventDefault();
+    });
+});
+
+/*QUESTA E' UNA FUNZIONE CHE SERVE A FAR APRIRE IL MENU TRAMITE CLICK QUANDO RIMPICCIOLIAMO LO SCHERMO O USIAMO UNO SMARTPHONE*/
+/*DOCUMENT.READY E' UNA FUNZIONE CHE FA ESEGUIRE TUTTO CIO' CHE C'E' DENTRO LE PARENTESI GRAFFFE QUANDO IL DOCUMENTO E' PRONTO (READY).
+'$' E' IL SELETTORE E TRA PARENTESI METTIAMO CIO' CHE VOGLIAMO SELEZIONARE. AL CLICK DI QUESTO ELEMENTO SELEZIONATO FACCIAMO ESEGUIRE UNA FUNZIONE 
+QUESTA FUNZIONE PRENDE IN CONSIDERAZIONE L'HEADER MENU(CHE VIENE DUNQUE SELEZIONATO TRAMITE IL SOLITO SELETTORE) E TRAMITE IL METODO 'TOGGLE-CLASS'
+AGGIUNGE UNA CLASSE ('IS-OPEN') ALL'HEADER MENU
+'event.preventDefault()' serve per BYPASSARE L'EVENTO nel senso che se clicchiamo sopra l'icona, essendo un link aperto, la pagina verrà ricaricata
+e il menu non verrà aperto .
+preventDefault è un metodo di JQuery
+*/

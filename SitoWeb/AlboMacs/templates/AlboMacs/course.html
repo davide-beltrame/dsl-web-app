@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Program</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+
+<body>
+
+    <header class="header clearfix">
+        <img class = "header_logo" src='../static/img/logo_luiss.png' alt="centered image" width=120px class="header_logo">
+        <a href="" class="header_iconbar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <ul class="header_menu">
+            <li class="header_menu_item"><a href="{% url 'index' %}">Home</a></li>
+            <li class="header_menu_item"><a href="{% url 'achievements' %}">Achievements</a></li>
+            <li class="header_menu_item"><a href="{% url 'courseprogram' %}">Course program</a></li>
+        </ul>
+    </header>
+
+    <section class="cover">
+        <div class="cover_caption_filter">
+        <div class="cover_caption">
+                <div class="cover_caption_copy">
+                    <h1>Management and Computer Science</h1>
+                    <h2>Palmarès</h2>
+
+                </div>
+        </div>
+        </div>
+     
+    </section>  
+         
+
+    <section class="paragraph">
+            
+        <h2>About the Course</h2>
+            
+            <p>
+                Innovative program aimed at training a new leading class at the cutting edge of today’s digital revolution, answering specific demands from national and 
+                international job markets. MaCS combines strong quantitative skills in computer and data science with the rigorous thinking of economics and management, 
+                blending traditional courses in economics, entrepreneurship, law and statistics with a significant presence of STEM topics, and training students on algorithms, 
+                coding, artificial intelligence, data management. Graduates will be fully bilingual in digital and business. The high percentage of foreign instructors and students
+                and the opportunity to spend the third year abroad create a multicultural experience. 
+            </p>
+
+    </section>
+
+    <section class="exams">
+        <div class="inner">
+            <div class="centre">
+                <div class="table_title">
+                    <h2>First Year (academic year 2021-2022)</h2>
+                </div> 
+
+                <table class="table_exam">
+                    <caption>
+                        <h3>First Semester</h3>
+                    </caption>
+                    <thead>
+                    <tr><th>COURSE</th><th>CREDITS</th><th>SSD</th><th>ID</th><th>TEACHER</th></tr>
+                    </thead>
+                    {% for course in courses %}
+                        {% if course.course_year == 1 and course.course_semester == 1 %}
+                        <tbody>
+                                <tr><td>{{course.name}}</td>
+                                    <td>{{course.cfu}}</td>
+                                    <td>{{course.ssd}}</td>
+                                    <td>{{course.code}}</td>
+                                    <td>{{course.teacher.first_name}} {{course.teacher.last_name}}</td>
+                                </tr>
+                        </tbody>
+                        {% endif %} 
+                    {% endfor %}   
+                </table> 
+
+                <table class="table_exam">
+                    <caption>
+                        <h3>Second Semester</h3>
+                    </caption>
+                    <thead>
+                    <tr><th>COURSE</th><th>CREDITS</th><th>SSD</th><th>ID</th><th>TEACHER</th></tr>
+                    </thead>
+                    {% for course in courses %}
+                        {% if course.course_year == 1 and course.course_semester == 2 %}
+                        <tbody>
+                                <tr><td>{{course.name}}</td>
+                                    <td>{{course.cfu}}</td>
+                                    <td>{{course.ssd}}</td>
+                                    <td>{{course.code}}</td>
+                                    <td>{{course.teacher.first_name}} {{course.teacher.last_name}}</td>
+                                </tr>
+                        </tbody>
+                        {% endif %} 
+                    {% endfor %}   
+                </table> 
+            </div>
+
+            <div class="centre">
+                <div class="table_title">
+                    <h2>Second Year (academic year 2021-2022)</h2>
+                </div>
+
+                <table class="table_exam">
+                    <caption>
+                        <h3>First Semester</h3>
+                    </caption>
+                    <thead>
+                    <tr><th>COURSE</th><th>CREDITS</th><th>SSD</th><th>ID</th><th>TEACHER</th></tr>
+                    </thead>
+                    {% for course in courses %}
+                        {% if course.course_year == 2 and course.course_semester == 1 %}
+                        <tbody>
+                                <tr><td>{{course.name}}</td>
+                                    <td>{{course.cfu}}</td>
+                                    <td>{{course.ssd}}</td>
+                                    <td>{{course.code}}</td>
+                                    <td>{{course.teacher.first_name}} {{course.teacher.last_name}}</td>
+                                </tr>
+                        </tbody>
+                        {% endif %} 
+                    {% endfor %}   
+                </table> 
+
+                <table class="table_exam">
+                    <caption>
+                        <h3>Second Semester</h3>
+                    </caption>
+                    <thead>
+                    <tr><th>COURSE</th><th>CREDITS</th><th>SSD</th><th>ID</th><th>TEACHER</th></tr>
+                    </thead>
+                    {% for course in courses %}
+                        {% if course.course_year == 2 and course.course_semester == 2 %}
+                        <tbody>
+                                <tr><td>{{course.name}}</td>
+                                    <td>{{course.cfu}}</td>
+                                    <td>{{course.ssd}}</td>
+                                    <td>{{course.code}}</td>
+                                    <td>{{course.teacher.first_name}} {{course.teacher.last_name}}</td>
+                                </tr>
+                        </tbody>
+                        {% endif %} 
+                    {% endfor %}   
+                </table> 
+            </div>
+
+            <div class="centre">
+                <div class="table_title">
+                    <h2>Third Year (academic year 2021-2022)</h2>
+                </div>
+
+                <table class="table_exam">
+                    <caption>
+                        <h3>First Semester</h3>
+                    </caption>
+                    <thead>
+                    <tr><th>COURSE</th><th>CREDITS</th><th>SSD</th><th>ID</th><th>TEACHER</th></tr>
+                    </thead>
+                    {% for course in courses %}
+                        {% if course.course_year == 3 and course.course_semester == 1 %}
+                        <tbody>
+                                <tr><td>{{course.name}}</td>
+                                    <td>{{course.cfu}}</td>
+                                    <td>{{course.ssd}}</td>
+                                    <td>{{course.code}}</td>
+                                    <td>{{course.teacher.first_name}} {{course.teacher.last_name}}</td>
+                                </tr>
+                        </tbody>
+                        {% endif %} 
+                    {% endfor %}   
+                </table> 
+
+                <table class="table_exam">
+                    <caption>
+                        <h3>Second Semester</h3>
+                    </caption>
+                    <thead>
+                    <tr><th>COURSE</th><th>CREDITS</th><th>SSD</th><th>ID</th><th>TEACHER</th></tr>
+                    </thead>
+                    {% for course in courses %}
+                        {% if course.course_year == 3 and course.course_semester == 2 %}
+                        <tbody>
+                                <tr><td>{{course.name}}</td>
+                                    <td>{{course.cfu}}</td>
+                                    <td>{{course.ssd}}</td>
+                                    <td>{{course.code}}</td>
+                                    <td>{{course.teacher.first_name}} {{course.teacher.last_name}}</td>
+                                </tr>
+                        </tbody>
+                        {% endif %} 
+                    {% endfor %}   
+                </table> 
+            </div>
+
+            
+            
+        </div>
+
+        
+
+        
+        
+    </section>
+  
+
+
+    <footer class="footer">
+        <small>©2022 Author. Design by DaDeMa</small>
+    </footer>  
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   
+<script src="{% static 'script.js' %}"></script>
+    
+</body>
+</html>
